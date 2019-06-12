@@ -1,7 +1,3 @@
-import { element } from 'renga'
+import Body from './Body.js'
 
-const { section, h1 } = element
-
-document.body.appendChild(
-  section({style: {minHeight: '100vh', display: 'flex', flexFlow: 'row nowrap', alignItems: 'center', justifyContent: 'center', fontFamily: 'Helvetica'}}, h1('renga pokédex'))
-)
+document.body.appendChild(Body())

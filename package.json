@@ -4,7 +4,7 @@
   "description": "A pokedex built with renga.",
   "main": "./dist/bundle.js",
   "scripts": {
-    "start": "rollup -c"
+    "start": "rollup -c --watch"
   },
   "keywords": [
     "renga",
