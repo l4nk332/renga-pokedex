@@ -1,0 +1,24 @@
+{
+  "name": "renga_pokedex",
+  "version": "1.0.0",
+  "description": "A pokedex built with renga.",
+  "main": "./dist/bundle.js",
+  "scripts": {
+    "start": "rollup -c"
+  },
+  "keywords": [
+    "renga",
+    "pokemon",
+    "pokedex"
+  ],
+  "author": "Ian Jabour",
+  "license": "MIT",
+  "dependencies": {
+    "renga": "^1.0.3"
+  },
+  "devDependencies": {
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-node-resolve": "^5.0.1",
+    "rollup-plugin-serve": "^1.0.1"
+  }
+}
