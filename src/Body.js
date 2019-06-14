@@ -1,4 +1,5 @@
 import { element, scopeStyles } from 'renga'
+import Content from './Content.js'
 
 const { header, aside, main, article, style, fragment, input } = element
 
@@ -56,7 +57,7 @@ const Body = () => (
     aside({class: cn.sidebar}, fragment(
       input({type: 'text', placeholder: 'Search...', class: cn.search})
     )),
-    article({class: cn.content})
+    article({class: cn.content}, Content())
   ])
 )
 
