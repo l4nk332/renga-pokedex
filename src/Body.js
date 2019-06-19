@@ -32,7 +32,7 @@ const { classNames: cn, styles } = scopeStyles('Body', `
 
   .search {
     display: block;
-    font-size: var(--s-4);
+    font-size: var(--text-base);
     outline: none;
     padding: var(--s-3) var(--s-2);
     width: 100%;

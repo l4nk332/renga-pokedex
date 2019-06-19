@@ -1,15 +1,23 @@
 import { element, scopeStyles } from 'renga'
 
-const { header, section, style, h2, h3, small, span } = element
+import Label from './Label.js'
+import { flex } from './styles/mixins.js'
 
-function flex(dir, wrap, align, justify, isInline) {
-  return `
-    display: ${isInline ? 'inline-flex' : 'flex'};
-    flex-flow: ${dir} ${wrap};
-    align-items: ${align};
-    justify-content: ${justify};
-  `
-}
+const {
+  header,
+  section,
+  style,
+  h2,
+  h3,
+  small,
+  span,
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td
+} = element
 
 const { classNames: cn, styles } = scopeStyles('Overview', `
   .container {
@@ -28,17 +36,22 @@ const { classNames: cn, styles } = scopeStyles('Overview', `
   }
 
   .name {
-    font-size: var(--s-6);
+    font-size: var(--text-2xl);
   }
 
   .number {
-    font-size: var(--s-4);
+    font-size: var(--text-base);
     color: var(--gray600);
   }
 
   .species {
-    font-size: var(--s-3);
+    font-size: var(--text-sm);
     color: var(--gray600);
+  }
+
+  .value {
+    font-size: var(--text-xs);
+    padding-left: var(--s-2);
   }
 `)
 
@@ -58,7 +71,27 @@ const Overview = ({
         h3({class: cn.number}, number)
       ]),
       small({class: cn.species}, species)
-    ])
+    ]),
+    table(
+      tbody([
+        tr([
+          td(Label({text: 'type'})),
+          td({class: cn.value}, types.map(span))
+        ]),
+        tr([
+          td(Label({text: 'height'})),
+          td({class: cn.value}, height),
+        ]),
+        tr([
+          td(Label({text: 'weight'})),
+          td({class: cn.value}, weight),
+        ]),
+        tr([
+          td(Label({text: 'abilities'})),
+          td({class: cn.value}, abilities.join(', '))
+        ]),
+      ])
+    )
   ])
 )
 

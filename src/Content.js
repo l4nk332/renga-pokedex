@@ -60,7 +60,7 @@ const OVERVIEW = {
   number: '#002',
   species: 'seed pokémon',
   types: ['grass', 'poison'],
-  height: '3ft 3in',
+  height: `3' 3"`,
   weight: '28.7 lbs',
   abilities: ['Overgrow', 'Chlorophyll']
 }
