@@ -1,6 +1,7 @@
 import { element, scopeStyles } from 'renga'
 import Avatar from './Avatar.js'
 import Overview from './Overview.js'
+import Entry from './Entry.js'
 
 const { main, style, section } = element
 
@@ -18,9 +19,8 @@ const { classNames: cn, styles } = scopeStyles('Content', `
     background: var(--gray300);
   }
 
-  .description {
-    grid-area: description;
-    background: var(--gray300);
+  .entry {
+    grid-area: entry;
   }
 
   .evolution {
@@ -45,7 +45,7 @@ const { classNames: cn, styles } = scopeStyles('Content', `
     grid-gap: var(--s-8);
     grid-template-areas:
       "avatar overview stats"
-      "description description stats"
+      "entry entry stats"
       "evolution evolution moves"
       "types types moves";
     padding: var(--s-8);
@@ -65,12 +65,17 @@ const OVERVIEW = {
   abilities: ['Overgrow', 'Chlorophyll']
 }
 
+const ENTRY = {
+  text: 'When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.',
+  author: 'Pokédex Generation I'
+}
+
 const Content = () => (
   main({class: cn.container}, [
     section({class: cn.avatar}, Avatar(AVATAR)),
     section({class: cn.overview}, Overview(OVERVIEW)),
     section({class: cn.stats}),
-    section({class: cn.description}),
+    section({class: cn.entry}, Entry(ENTRY)),
     section({class: cn.evolution}),
     section({class: cn.types}),
     section({class: cn.moves})
