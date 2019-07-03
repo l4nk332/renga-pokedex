@@ -8,11 +8,11 @@ const { classNames: cn, styles } = scopeStyles('Entry', `
     ${flex('column', 'nowrap', 'flex-start', 'flex-start')}
     font-size: var(--text-base);
     background: var(--gray300);
-    padding: var(--s-5) var(--s-6);
+    padding: var(--s-6);
   }
 
   .quote {
-    color: var(--gray600);
+    color: var(--gray700);
     font-style: italic;
     font-weight: 600;
     margin: 0 0 var(--s-3) 0;

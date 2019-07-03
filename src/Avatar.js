@@ -10,15 +10,14 @@ const { classNames: cn, styles } = scopeStyles('Avatar', `
     border-radius: 50%;
     background: var(--gray300);
     box-shadow: var(--shadow-inner);
-  }
-
-  .image {
-    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
   }
 `)
 
 const Avatar = ({ src }) => (
-  figure({class: cn.container}, img({class: cn.image, src, alt: 'Ivysaur default sprite'}))
+  figure({class: cn.container, style: {backgroundImage: `url('${src}')`}})
 )
 
 document.body.appendChild(style(styles))
